@@ -8,8 +8,16 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'menu-inicio-alumno',
     pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'menu-inicio-alumno',
+    loadChildren: () => import('./menu-inicio-alumno/menu-inicio-alumno.module').then( m => m.MenuInicioAlumnoPageModule)
   },
 ];
 
