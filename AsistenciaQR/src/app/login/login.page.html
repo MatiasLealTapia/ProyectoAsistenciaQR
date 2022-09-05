@@ -1,9 +1,41 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
+  <div class="header-img-bg">
+    <img class="header-img" src="../../assets/img/Duoc/lvc.jpg">
+  </div>
 </ion-header>
 
 <ion-content>
-
+  <body>
+    <div align="center">
+      <img src="../../assets/img/Duoc/logo-duoc-v2.png" alt="DuocUC" class="duoc-logo">
+      <div class="reg-asis-box">
+        <h4 class="reg-asis-text"><b>Registro de Asistencia</b></h4>
+      </div>
+      <form>
+        <div class="inicio-sesion-box">
+          <ion-item>
+            <ion-label><ion-icon name="accessibility-outline"></ion-icon></ion-label>
+            <ion-input type="text" placeholder="Usuario"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label><ion-icon name="lock-closed-outline"></ion-icon></ion-label>
+            <ion-input type="password" placeholder="Contrase&ntilde;a"></ion-input>
+          </ion-item>
+          <br>
+        </div>
+        <div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <a [routerLink]="['/menu-inicio-alumno']"><ion-button shape="round" size="large" color="light" type="submit">Iniciar Sesion</ion-button></a>
+        </div>
+      </form>
+      <div class="recuperar-contra-box">
+        <h4 class="recuperar-contra-text">¿Olvidaste tu <a href="#">usuario</a> o <a href="#">contraseña</a>?</h4>
+      </div>
+    </div>
+  </body>
 </ion-content>
