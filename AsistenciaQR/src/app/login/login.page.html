@@ -11,15 +11,15 @@
       <div class="reg-asis-box">
         <h4 class="reg-asis-text"><b>Registro de Asistencia</b></h4>
       </div>
-      <form>
+      <form [formGroup]="usuario" (ngSubmit)="guardarDatos()">
         <div class="inicio-sesion-box">
           <ion-item>
             <ion-label><ion-icon name="accessibility-outline"></ion-icon></ion-label>
-            <ion-input type="text" placeholder="Usuario"></ion-input>
+            <ion-input formControlName="usrnme" type="text" id="username" placeholder="Usuario" required></ion-input>
           </ion-item>
           <ion-item>
             <ion-label><ion-icon name="lock-closed-outline"></ion-icon></ion-label>
-            <ion-input type="password" placeholder="Contrase&ntilde;a"></ion-input>
+            <ion-input formControlName="contrasenna" type="password" id="password" placeholder="Contrase&ntilde;a" required></ion-input>
           </ion-item>
           <br>
         </div>
@@ -30,7 +30,8 @@
           <br>
           <br>
           <br>
-          <a [routerLink]="['/menu-inicio-alumno']"><ion-button shape="round" size="large" color="light" type="submit">Iniciar Sesion</ion-button></a>
+          <ion-button shape="round" size="large" color="light" type="submit">Iniciar Sesion</ion-button>
+          <mat-progress-bar mode="indeterminate" style="display: none;" id="progrBar"></mat-progress-bar>
         </div>
       </form>
       <div class="recuperar-contra-box">
@@ -39,3 +40,4 @@
     </div>
   </body>
 </ion-content>
+

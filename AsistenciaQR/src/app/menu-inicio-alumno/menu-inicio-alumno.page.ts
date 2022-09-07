@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
 import { MenuController } from '@ionic/angular';
 
 @Component({
@@ -8,7 +9,15 @@ import { MenuController } from '@ionic/angular';
 })
 export class MenuInicioAlumnoPage implements OnInit {
 
-  constructor(private menu: MenuController) { }
+  dato:any;
+  constructor(private menu: MenuController, private activeroute: ActivatedRoute, private router: Router) {
+    this.activeroute.queryParams.subscribe(params => {
+      if (this.router.getCurrentNavigation().extras.state) {
+        this.dato = this.router.getCurrentNavigation().extras.state.user;
+        console.log(this.dato);
+      }
+    })
+   }
 
   ngOnInit() {
   }

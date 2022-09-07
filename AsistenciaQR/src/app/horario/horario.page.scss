@@ -35,6 +35,10 @@ body ion-icon {
     padding-top: 4px;
 }
 
+.horario-text{
+    padding-top: 10px;
+}
+
 .dia-box{
     margin-top: 6px;
     border-top-left-radius: 20px;
@@ -64,11 +68,18 @@ body ion-icon {
 ion-accordion-group{
     ion-accordion {
         .ion-accordion-toggle-icon {
-            color: white;
+            color: #D9D9D9;
         }
     }
 }
 
-.item-native{
-    background: #34495E;
+.dia-box .clase-box{
+    background-color: #34495e34;
+    color: white;
+    margin:0;
+    padding:0;
+}
+
+.text-clase-box{
+    margin-top: 0;
 }
