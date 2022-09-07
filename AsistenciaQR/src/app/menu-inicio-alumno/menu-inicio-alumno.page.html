@@ -8,27 +8,31 @@
     </ion-toolbar>
   </ion-header>
   <ion-content>
-    <ion-list lines="none">
+    <ion-list lines="none" [routerLink]="['/horario']">
       <div class="inline-al-items-center">
         <ion-icon name="calendar-outline" class="menu-icon"></ion-icon>
         <ion-item>Horario</ion-item>
       </div>
     </ion-list>
-    <div class="inline-al-items-center">
-      <ion-icon name="list-outline" class="menu-icon"></ion-icon>
-      <ion-item>Asistencias</ion-item>
-    </div>
+    <ion-list [routerLink]="['/asistencias']">
+      <div class="inline-al-items-center">
+        <ion-icon name="list-outline" class="menu-icon"></ion-icon>
+        <ion-item>Asistencias</ion-item>
+      </div>
+    </ion-list>
     <ion-list lines="none">
       <div class="inline-al-items-center">
         <ion-icon name="help-circle-outline" class="menu-icon"></ion-icon>
         <ion-item>Ayuda</ion-item>
       </div>
     </ion-list>
-    <div class="inline-al-items-center">
-      <ion-icon name="bug-outline" class="menu-icon"></ion-icon>
-      <ion-item>Reportar errores</ion-item>
-    </div>
-    <ion-list lines="none">
+    <ion-list [routerLink]="['/rep-errores']">
+      <div class="inline-al-items-center">
+        <ion-icon name="bug-outline" class="menu-icon"></ion-icon>
+        <ion-item>Reportar errores</ion-item>
+      </div>
+    </ion-list>
+    <ion-list lines="none" [routerLink]="['/login']">
       <div class="inline-al-items-center">
         <ion-icon name="exit-outline" class="menu-icon"></ion-icon>
         <ion-item>Cerrar Sesi&oacute;n</ion-item>
@@ -52,6 +56,16 @@
   <body>
     <div>
       <ion-item class="user-box">
+        <ion-icon name="person-circle" class="icono-usuario"></ion-icon>
+        <ion-label class="label-usuario">
+          <h2>John Doe Perez</h2>
+          <h4>12.345.678-9</h4>
+          <p>Analista Programador Computacional</p>
+        </ion-label>
+      </ion-item>
+    </div>
+    <div>
+      <ion-item class="qr-box">
         <ion-icon name="person-circle" class="icono-usuario"></ion-icon>
         <ion-label class="label-usuario">
           <h2>John Doe Perez</h2>

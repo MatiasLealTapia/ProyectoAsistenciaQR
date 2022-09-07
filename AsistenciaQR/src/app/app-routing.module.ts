@@ -18,7 +18,19 @@ const routes: Routes = [
   {
     path: 'menu-inicio-alumno',
     loadChildren: () => import('./menu-inicio-alumno/menu-inicio-alumno.module').then( m => m.MenuInicioAlumnoPageModule)
+  },  {
+    path: 'horario',
+    loadChildren: () => import('./horario/horario.module').then( m => m.HorarioPageModule)
   },
+  {
+    path: 'asistencias',
+    loadChildren: () => import('./asistencias/asistencias.module').then( m => m.AsistenciasPageModule)
+  },
+  {
+    path: 'rep-errores',
+    loadChildren: () => import('./rep-errores/rep-errores.module').then( m => m.RepErroresPageModule)
+  },
+
 ];
 
 @NgModule({
