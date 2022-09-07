@@ -66,8 +66,9 @@ ion-accordion-group{
         .ion-accordion-toggle-icon {
             color: white;
         }
-        ion-item[slot="header"]{
-            background-color: #34495E;
-        }
     }
+}
+
+.item-native{
+    background: #34495E;
 }
