@@ -9,6 +9,12 @@
 
 <ion-content>
   <body>
-
+    <div class="textarea-box" align="center">
+      <ion-text><h3 class="text-desc"><ion-icon name="alert-circle-outline"></ion-icon> Descripci&oacute;n del error:<br><h5>(Por favor, lo mas detallado posible)</h5></h3></ion-text>
+      <textarea rows="10"></textarea>
+    </div>
+    <div align="center">
+      <a [routerLink]="['/menu-inicio-alumno']"><ion-button shape="round" size="large" color="light">Enviar Reporte</ion-button></a>
+    </div>
   </body>
 </ion-content>
