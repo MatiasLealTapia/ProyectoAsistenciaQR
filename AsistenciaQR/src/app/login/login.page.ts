@@ -15,9 +15,17 @@ export class LoginPage implements OnInit {
     contrasenna: new FormControl('', [Validators.required, Validators.minLength(4)]),
   });
 
-  constructor(private router: Router, private alertController: AlertController) { }
+  constructor(private router: Router, private alertController: AlertController) {
+    this.router.navigate(['login/recuperar-password'])
+   }
 
   ngOnInit() {
+  }
+
+  segmentChanged($event){
+    console.log($event.detail.value);
+    let direction=$event.detail.value
+    this.router.navigate(['login/'+direction])
   }
 
   // LoginProgrBar() {

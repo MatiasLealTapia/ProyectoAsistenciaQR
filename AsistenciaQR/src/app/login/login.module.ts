@@ -9,6 +9,7 @@ import { LoginPageRoutingModule } from './login-routing.module';
 import { LoginPage } from './login.page';
 
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { RecuperarPasswordComponent } from '../recuperar-password/recuperar-password.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,6 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     LoginPageRoutingModule,
     MatProgressBarModule
   ],
-  declarations: [LoginPage]
+  declarations: [LoginPage, RecuperarPasswordComponent]
 })
 export class LoginPageModule {}

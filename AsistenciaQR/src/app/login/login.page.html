@@ -5,6 +5,7 @@
 </ion-header>
 
 <ion-content>
+
   <body>
     <div align="center">
       <img src="../../assets/img/Duoc/logo-duoc-v2.png" alt="DuocUC" class="duoc-logo">
@@ -14,12 +15,17 @@
       <form [formGroup]="usuario" (ngSubmit)="guardarDatos()">
         <div class="inicio-sesion-box">
           <ion-item>
-            <ion-label><ion-icon name="accessibility-outline"></ion-icon></ion-label>
+            <ion-label>
+              <ion-icon name="accessibility-outline"></ion-icon>
+            </ion-label>
             <ion-input formControlName="usrnme" type="text" id="username" placeholder="Usuario" required></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label><ion-icon name="lock-closed-outline"></ion-icon></ion-label>
-            <ion-input formControlName="contrasenna" type="password" id="password" placeholder="Contrase&ntilde;a" required></ion-input>
+            <ion-label>
+              <ion-icon name="lock-closed-outline"></ion-icon>
+            </ion-label>
+            <ion-input formControlName="contrasenna" type="password" id="password" placeholder="Contrase&ntilde;a"
+              required></ion-input>
           </ion-item>
           <br>
         </div>
@@ -35,7 +41,7 @@
         </div>
       </form>
       <div class="recuperar-contra-box">
-        <h4 class="recuperar-contra-text">¿Olvidaste tu <a href="#">usuario</a> o <a href="#">contraseña</a>?</h4>
+        <h4 class="recuperar-contra-text">¿Olvidaste tu <a>contraseña</a>?</h4>
       </div>
     </div>
   </body>
