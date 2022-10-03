@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router, NavigationExtras, ActivatedRoute, Data } from '@angular/router';
 import { IonList, MenuController } from '@ionic/angular';
+import { MenuInicioAlumnoPage } from '../menu-inicio-alumno/menu-inicio-alumno.page'
 
 @Component({
   selector: 'app-slide-menu',
@@ -9,11 +10,12 @@ import { IonList, MenuController } from '@ionic/angular';
 })
 export class SlideMenuComponent implements OnInit {
 
-
   @Input() childMessage: String;
-
-  constructor(private menu: MenuController) { 
-    console.log(this.childMessage);
+  
+  nombre:any;
+  constructor(private menu: MenuController, private datos: MenuInicioAlumnoPage) {
+    this.nombre=datos.dato.usrnme;
+    console.log(this.nombre);
   }
 
   ngOnInit() {}
