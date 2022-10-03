@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router, NavigationExtras, ActivatedRoute, Data } from '@angular/router';
+import { IonList, MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-slide-menu',
@@ -7,8 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SlideMenuComponent implements OnInit {
 
-  constructor() { }
+
+  @Input() childMessage: String;
+
+  constructor(private menu: MenuController) { 
+    console.log(this.childMessage);
+  }
 
   ngOnInit() {}
+
+
+  ionViewWillLeave() {
+    this.menu.close('custom')
+  }
 
 }

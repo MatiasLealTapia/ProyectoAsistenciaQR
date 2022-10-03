@@ -1,0 +1,112 @@
+body{
+    background-color: #D9D9D9;
+}
+
+ion-header{
+    background-color: #34495E;
+}
+
+.header-logo{
+    margin-left: 5px;
+    padding-bottom: 15px;
+    display: flex;
+    flex-flow: row;
+    margin-top: 25px;
+    width: 50%;
+}
+
+.logo-img{
+    margin-left: 35px;
+    padding-bottom: 8px;
+}
+
+.div-username{
+    display: inline-flex;
+    align-items: center;
+}
+
+ion-toolbar .menu-icon{
+    color: white;
+}
+
+.menu-icon{
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.inline-al-items-center{
+    display: inline-flex;
+    align-items: center;
+}
+
+.text-horario{
+    display: inline-flex;
+    align-items: center;
+}
+
+.text-horario ion-icon{
+    height: 20px;
+    width: 20px;
+}
+
+.horario-text-bold{
+    margin-right: 20px;
+    padding-left: 10px;
+}
+
+.horario-box{
+    margin-top: 5%;
+    border-radius: 20px;
+    background-color: white;
+    margin-left: 4%;
+    margin-right: 4%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding-bottom: 12px;
+    padding-top: 4px;
+}
+
+.user-box{
+    border-radius: 20px;
+    background-color: white;
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: 5%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.qr-box{
+    border-radius: 20px;
+    background-color: white;
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: 5%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding-top: 2px;
+}
+
+.icono-usuario{
+    width: 60px;
+    height: 60px;
+}
+
+.label-usuario{
+    margin-left: 15px;
+}
+
+body ion-icon {
+    color: #34495E;
+}
+
+.qr-icon{
+    width: 180px;
+    height: 180px;
+}
+
+.btn-cam-qr{
+    padding-bottom: 0px;
+}
+
+.btn-escanear-qr{
+    padding-top: 0;
+}
