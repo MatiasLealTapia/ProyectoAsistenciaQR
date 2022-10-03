@@ -30,6 +30,14 @@ const routes: Routes = [
     path: 'rep-errores',
     loadChildren: () => import('./rep-errores/rep-errores.module').then( m => m.RepErroresPageModule)
   },
+  {
+    path: 'agregar',
+    loadChildren: () => import('./pages/agregar/agregar.module').then( m => m.AgregarPageModule)
+  },
+  {
+    path: 'modificar',
+    loadChildren: () => import('./pages/modificar/modificar.module').then( m => m.ModificarPageModule)
+  },
 
 ];
 
