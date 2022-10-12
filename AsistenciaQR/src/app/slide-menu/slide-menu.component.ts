@@ -13,7 +13,7 @@ export class SlideMenuComponent implements OnInit {
   @Input() childMessage: String;
   
   nombre:any;
-  constructor(private menu: MenuController, private datos: MenuInicioAlumnoPage) {
+  constructor(private router: Router, private menu: MenuController, private datos: MenuInicioAlumnoPage) {
     this.nombre=datos.dato.usrnme;
     console.log(this.nombre);
   }
@@ -23,6 +23,10 @@ export class SlideMenuComponent implements OnInit {
 
   ionViewWillLeave() {
     this.menu.close('custom')
+  }
+
+  rutearHacia(url){
+    this.router.navigate([url]);
   }
 
 }

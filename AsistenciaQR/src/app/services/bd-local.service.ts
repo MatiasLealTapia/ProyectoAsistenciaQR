@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
+import { Iuser } from '../interfaces/iuser';
 
 @Injectable({
   providedIn: 'root'

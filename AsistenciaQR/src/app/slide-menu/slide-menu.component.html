@@ -8,13 +8,13 @@
     </ion-toolbar>
   </ion-header>
   <ion-content>
-    <ion-list lines="none" [routerLink]="['/horario']">
+    <ion-list lines="none" (click)="rutearHacia('/horario')">
       <div class="inline-al-items-center">
         <ion-icon name="calendar-outline" class="menu-icon"></ion-icon>
         <ion-item>Horario</ion-item>
       </div>
     </ion-list>
-    <ion-list [routerLink]="['/asistencias']">
+    <ion-list (click)="rutearHacia('/asistencias')">
       <div class="inline-al-items-center">
         <ion-icon name="list-outline" class="menu-icon"></ion-icon>
         <ion-item>Asistencias</ion-item>
@@ -26,13 +26,13 @@
         <ion-item>Ayuda</ion-item>
       </div>
     </ion-list>
-    <ion-list [routerLink]="['/rep-errores']">
+    <ion-list (click)="rutearHacia('/rep-errores')">
       <div class="inline-al-items-center">
         <ion-icon name="bug-outline" class="menu-icon"></ion-icon>
         <ion-item>Reportar errores</ion-item>
       </div>
     </ion-list>
-    <ion-list lines="none" [routerLink]="['/login']">
+    <ion-list lines="none" (click)="rutearHacia('/login')">
       <div class="inline-al-items-center">
         <ion-icon name="exit-outline" class="menu-icon"></ion-icon>
         <ion-item>Cerrar Sesi&oacute;n</ion-item>

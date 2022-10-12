@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router, NavigationExtras } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { BdLocalService } from '../services/bd-local.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginPage implements OnInit {
     contrasenna: new FormControl('', [Validators.required, Validators.minLength(4)]),
   });
 
-  constructor(private router: Router, private alertController: AlertController) {
+  constructor(public bdlocalservice: BdLocalService, private router: Router, private alertController: AlertController) {
     this.router.navigate(['login/recuperar-password'])
    }
 

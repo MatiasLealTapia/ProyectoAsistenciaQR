@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationExtras, ActivatedRoute, Data } from '@angular/router';
 
 @Component({
   selector: 'app-rep-errores',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RepErroresPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  rutearHacia(url){
+    this.router.navigate([url]);
   }
 
 }
