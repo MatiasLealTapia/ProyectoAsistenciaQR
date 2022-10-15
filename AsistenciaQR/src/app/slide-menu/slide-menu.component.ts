@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router, NavigationExtras, ActivatedRoute, Data } from '@angular/router';
 import { IonList, MenuController } from '@ionic/angular';
-import { MenuInicioAlumnoPage } from '../menu-inicio-alumno/menu-inicio-alumno.page'
+import { BdLocalService } from '../services/bd-local.service';
 
 @Component({
   selector: 'app-slide-menu',
@@ -9,17 +9,20 @@ import { MenuInicioAlumnoPage } from '../menu-inicio-alumno/menu-inicio-alumno.p
   styleUrls: ['./slide-menu.component.scss'],
 })
 export class SlideMenuComponent implements OnInit {
-
-  @Input() childMessage: String;
   
   nombre:any;
-  constructor(private router: Router, private menu: MenuController, private datos: MenuInicioAlumnoPage) {
-    this.nombre=datos.dato.usrnme;
-    console.log(this.nombre);
+  listData = [];
+  constructor(public bdlocalservice: BdLocalService,private router: Router, private menu: MenuController) {
+    this.bdlocalservice.init();
+    this.bdlocalservice.cargarUsuarios();
+    console.log(this.obtenerUsuario());
   }
 
   ngOnInit() {}
 
+  async obtenerUsuario(){
+    this.listData = await this.bdlocalservice.cargarUsuarios();
+  }
 
   ionViewWillLeave() {
     this.menu.close('custom')

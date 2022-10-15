@@ -15,7 +15,6 @@ export class MenuInicioAlumnoPage implements OnInit {
       if (this.router.getCurrentNavigation().extras.state) {
         this.dato = this.router.getCurrentNavigation().extras.state.user;
         this.router.navigate(['menu-inicio-alumno/slide-menu'])
-        console.log(this.dato);
       }
     })
    }

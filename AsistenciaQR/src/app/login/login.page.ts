@@ -15,10 +15,15 @@ export class LoginPage implements OnInit {
     usrnme: new FormControl('', [Validators.required, Validators.minLength(3)]),
     contrasenna: new FormControl('', [Validators.required, Validators.minLength(4)]),
   });
+  
 
   constructor(public bdlocalservice: BdLocalService, private router: Router, private alertController: AlertController) {
     this.router.navigate(['login/recuperar-password'])
-   }
+  }
+
+  guardar(){
+    this.bdlocalservice.guardarUsuario(this.usuario.value.usrnme,this.usuario.value.contrasenna)
+  }
 
   ngOnInit() {
   }
@@ -41,6 +46,7 @@ export class LoginPage implements OnInit {
         state: {user: this.usuario.value}
         };
         this.router.navigate(['/menu-inicio-alumno'],navigationExtras);
+        this.guardar();
     }else{
       this.presentAlert()
     }
