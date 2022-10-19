@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ApiService {
+export class ClasesApiService {
 
   httpOptions = {
     headers: new HttpHeaders
@@ -15,18 +15,17 @@ export class ApiService {
         'Access-Control-Allow-Origin': '*'
       })
   } // Se establece la base url del API a consumir
-  apiURL = 'http://192.168.153.187:3000';
+  apiURL = 'https://matiaslealtapia.github.io/ionicApiRestProyectoQR/clases.json';
 
-  constructor(private http: HttpClient) { }
+  constructor(public http: HttpClient) { }
 
-
-  getUsuario(username):Observable<any>{
-    return this.http.get(this.apiURL+'/users?username='+username).pipe(
+  getClase(clase):Observable<any>{
+    return this.http.get(this.apiURL).pipe(
       retry(3)
     );
   }
-  getUsuarios():Observable<any>{
-    return this.http.get(this.apiURL+'/users/').pipe(
+  getClases():Observable<any>{
+    return this.http.get(this.apiURL).pipe(
       retry(3)
     );
   }
