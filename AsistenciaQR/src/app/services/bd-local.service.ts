@@ -24,10 +24,11 @@ export class BdLocalService {
     if (!existe) {
       this.usuario.unshift({strUsrnme:username,strPass:password})
       this._storage.set('usuario',this.usuario);
-      this.presentToast("Usuario registrado")
-    } else {
-      this.presentToast("Usuario ya ha sido registrado con anterioridad.")
+      // this.presentToast("Usuario registrado")
     }
+    // } else {
+    //   this.presentToast("Usuario ya ha sido registrado con anterioridad.")
+    // }
   }
 
   async cargarUsuarios() {

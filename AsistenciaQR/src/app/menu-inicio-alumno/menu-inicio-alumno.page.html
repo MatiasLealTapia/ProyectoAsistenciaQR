@@ -43,8 +43,8 @@
 
 <ion-router-outlet id="main"></ion-router-outlet> -->
 
-<ion-router-outlet></ion-router-outlet>
 
+<ion-router-outlet></ion-router-outlet>
 <ion-header>
   <div class="header-logo">
       <ion-buttons slot="start">
@@ -60,9 +60,9 @@
       <ion-item class="user-box">
         <ion-icon name="person-circle" class="icono-usuario"></ion-icon>
         <ion-label class="label-usuario">
-          <h2>{{dato.usrnme}}(nombre)</h2>
-          <h4>12.345.678-9</h4>
-          <p>Analista Programador Computacional</p>
+          <h2>{{dato.nombre}}</h2>
+          <h4>{{dato.rut}}</h4>
+          <p>{{dato.carrera}}</p>
         </ion-label>
       </ion-item>
     </div>
@@ -89,3 +89,4 @@
     </div>
   </body>
 </ion-content>
+

@@ -10,6 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { SQLite } from '@awesome-cordova-plugins/sqlite/ngx';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Camera } from '@awesome-cordova-plugins/camera/ngx';
+import { HttpClientModule } from '@angular/common/http';
+import { CacheModule } from "ionic-cache";
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +20,8 @@ import { Camera } from '@awesome-cordova-plugins/camera/ngx';
     IonicModule.forRoot(),
     AppRoutingModule,
     IonicStorageModule.forRoot(),
+    CacheModule.forRoot(),
+    HttpClientModule,
     BrowserAnimationsModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, SQLite, Camera],

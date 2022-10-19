@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Router, NavigationExtras, ActivatedRoute, Data } from '@angular/router';
-import { IonList, MenuController } from '@ionic/angular';
-import { BdLocalService } from '../services/bd-local.service';
+import { Router } from '@angular/router';
+import {  MenuController } from '@ionic/angular';
+import { CacheService } from "ionic-cache";
 
 @Component({
   selector: 'app-slide-menu',
@@ -11,17 +11,13 @@ import { BdLocalService } from '../services/bd-local.service';
 export class SlideMenuComponent implements OnInit {
   
   nombre:any;
-  listData = [];
-  constructor(public bdlocalservice: BdLocalService,private router: Router, private menu: MenuController) {
-    this.bdlocalservice.init();
-    this.bdlocalservice.cargarUsuarios();
-    console.log(this.obtenerUsuario());
+  constructor(private cache: CacheService, private router: Router, private menu: MenuController) {
   }
 
-  ngOnInit() {}
-
-  async obtenerUsuario(){
-    this.listData = await this.bdlocalservice.cargarUsuarios();
+  ngOnInit() {
+    let key = 'nomUsuario';
+    this.nombre = this.cache.getRawItem(key);
+    console.log(this.nombre)
   }
 
   ionViewWillLeave() {

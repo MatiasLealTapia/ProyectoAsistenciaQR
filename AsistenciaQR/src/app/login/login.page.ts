@@ -3,6 +3,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router, NavigationExtras } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { BdLocalService } from '../services/bd-local.service';
+import { ApiService } from '../services/api.service';
+import { CacheService } from "ionic-cache";
 
 @Component({
   selector: 'app-login',
@@ -11,14 +13,26 @@ import { BdLocalService } from '../services/bd-local.service';
 })
 export class LoginPage implements OnInit {
 
+  user:any;
+  users:any;
+  compareWith:any;
   usuario = new FormGroup({
     usrnme: new FormControl('', [Validators.required, Validators.minLength(3)]),
     contrasenna: new FormControl('', [Validators.required, Validators.minLength(4)]),
   });
   
 
-  constructor(public bdlocalservice: BdLocalService, private router: Router, private alertController: AlertController) {
+  constructor(private cache: CacheService, private api: ApiService, public bdlocalservice: BdLocalService, private router: Router, private alertController: AlertController) {
+    cache.setDefaultTTL(60 * 60);
     this.router.navigate(['login/recuperar-password'])
+  }
+  ionViewWillEnter(){
+    this.getUsuarios();
+  }
+  getUsuarios(){
+    this.api.getUsuarios().subscribe((data)=>{
+      this.users=data;
+    });
   }
 
   guardar(){
@@ -42,14 +56,25 @@ export class LoginPage implements OnInit {
   guardarDatos(){
     console.log(this.usuario.value);
     if (this.usuario.valid){
-      let navigationExtras: NavigationExtras = {
-        state: {user: this.usuario.value}
-        };
-        this.router.navigate(['/menu-inicio-alumno'],navigationExtras);
-        this.guardar();
+      this.api.getUsuario(this.usuario.value.usrnme).subscribe((data)=>{
+        console.log(data[0])
+        this.user=data[0];
+        if (data[0].password == this.usuario.value.contrasenna){
+          let navigationExtras: NavigationExtras = {
+            state: {user: data[0]}
+            };
+            let key = 'nomUsuario';
+            this.cache.saveItem(key,data[0].username);
+            this.router.navigate(['/menu-inicio-alumno'],navigationExtras);
+            this.guardar();
+          } else {
+            this.presentAlert()
+          }
+      });
     }else{
       this.presentAlert()
     }
+
     
   }
 
