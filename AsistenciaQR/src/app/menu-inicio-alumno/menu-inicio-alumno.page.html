@@ -71,11 +71,11 @@
         <ion-row>
           <ion-col class="btn-cam-qr">
             <ion-label align="center">
-              <a [routerLink]="['/menu-inicio-alumno']"><ion-icon name="qr-code-sharp" class="qr-icon"></ion-icon></a>
+              <a (click)="startScanner()" [hidden]="scanActive"><ion-icon name="qr-code-sharp" class="qr-icon"></ion-icon></a>
             </ion-label>
           </ion-col>
           <ion-col align="center" class="btn-escanear-qr">
-            <a [routerLink]="['/menu-inicio-alumno']"><ion-button shape="round" size="large" color="light">Escanear QR</ion-button></a>
+            <a (click)="startScanner()" [hidden]="scanActive"><ion-button shape="round" size="large" color="light">Escanear QR</ion-button></a>
           </ion-col>
         </ion-row>
       </ion-item>

@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SQLite } from '@awesome-cordova-plugins/sqlite/ngx';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Camera } from '@awesome-cordova-plugins/camera/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,7 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     IonicStorageModule.forRoot(),
     BrowserAnimationsModule
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, SQLite],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, SQLite, Camera],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
