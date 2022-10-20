@@ -89,4 +89,15 @@ export class LoginPage implements OnInit {
     await alert.present();
   }
 
+  async AlertaUsuarioNF() {
+    const alert = await this.alertController.create({
+      header: 'Error',
+      subHeader: '',
+      message: 'El usuario no se encuentra registrado. ¿Deseas registrarte?',
+      buttons: ['Ok'],
+    });
+
+    await alert.present();
+  }
+
 }

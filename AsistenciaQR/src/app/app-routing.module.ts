@@ -18,7 +18,8 @@ const routes: Routes = [
   {
     path: 'menu-inicio-alumno',
     loadChildren: () => import('./menu-inicio-alumno/menu-inicio-alumno.module').then( m => m.MenuInicioAlumnoPageModule)
-  },  {
+  },
+  {
     path: 'horario',
     loadChildren: () => import('./horario/horario.module').then( m => m.HorarioPageModule)
   },
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'modificar',
     loadChildren: () => import('./pages/modificar/modificar.module').then( m => m.ModificarPageModule)
+  },
+  {
+    path: '**',
+    loadChildren: () => import('./not-found/not-found.module').then( m => m.NotFoundPageModule)
   },
 
 ];

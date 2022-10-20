@@ -15,7 +15,7 @@ export class ApiService {
         'Access-Control-Allow-Origin': '*'
       })
   } // Se establece la base url del API a consumir
-  apiURL = 'http://192.168.153.140:3000';
+  apiURL = 'http://10.20.17.196:3000';
 
   constructor(private http: HttpClient) { }
 
