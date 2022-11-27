@@ -1,0 +1,3 @@
+Para iniciar db usar...
+> cd .\AsistenciaQR\
+> json-server -H <ip> .\db.json
