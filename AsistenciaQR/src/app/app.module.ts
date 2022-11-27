@@ -28,9 +28,8 @@ const getConfig = () => {
     CacheModule.forRoot(),
     HttpClientModule,
     BrowserAnimationsModule,
-    BarcodeScanner
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, BarcodeScanner],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
