@@ -22,6 +22,7 @@ export class MenuInicioAlumnoPage implements OnInit {
     })
   }
 
+
   barCode() {
     this.barcodeScanner.scan().then(barcodeData => {
       this.code = barcodeData.text;
