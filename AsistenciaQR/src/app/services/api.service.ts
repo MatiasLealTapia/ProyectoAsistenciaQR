@@ -24,13 +24,12 @@ export class ApiService {
 
   getUsuario(username):Observable<any>{
     return this.http.get(this.apiURL+'/users?username='+username).pipe(
-      retry(3),
-      catchError(this.handleError)
+      catchError(this.handleError),
+      retry(1)
     );
   }
   getUsuarios():Observable<any>{
     return this.http.get(this.apiURL+'/users/').pipe(
-      retry(3),
       catchError(this.handleError)
     );
   }

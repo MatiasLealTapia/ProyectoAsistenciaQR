@@ -20,7 +20,7 @@ export class LoginPage implements OnInit {
     usrnme: new FormControl('', [Validators.required, Validators.minLength(3)]),
     contrasenna: new FormControl('', [Validators.required, Validators.minLength(4)]),
   });
-  
+
 
   constructor(public loadingController: LoadingController, private cache: CacheService, private api: ApiService, public bdlocalservice: BdLocalService, private router: Router, private alertController: AlertController) {
     cache.setDefaultTTL(60 * 60);
@@ -29,7 +29,7 @@ export class LoginPage implements OnInit {
   async presentIniciandoSesion() {
     const loading = await this.loadingController.create({
       message: 'Iniciando sesión...',
-      duration: 10000
+      duration: 15000
     });
     await loading.present();
   }
@@ -54,6 +54,10 @@ export class LoginPage implements OnInit {
   getUsuarios(){
     this.api.getUsuarios().subscribe((data)=>{
       this.users=data;
+    },
+    error=>{
+      this.loadingController.dismiss();
+      this.noResponde2()
     });
   }
 
@@ -139,6 +143,17 @@ export class LoginPage implements OnInit {
       header: 'Error',
       subHeader: '',
       message: 'Falló la conexión, intente nuevamente.',
+      buttons: ['Ok'],
+    });
+
+    await alert.present();
+  }
+  
+  async noResponde2() {
+    const alert = await this.alertController.create({
+      header: 'Error',
+      subHeader: '',
+      message: 'Falló la conexión con el servidor. Por favor reinicia la aplicación.',
       buttons: ['Ok'],
     });
 
