@@ -88,7 +88,7 @@
     <div align="center" class="horario-box">
       <ion-text class="text-horario">
         <h1><ion-icon name="calendar-outline" class="menu-icon"></ion-icon><b class="horario-text-bold">Horario</b>
-        <h4>(Miercoles 7 de Septiembre 2022)</h4>
+        <h4>({{ today | date : 'dd' }} de {{ today | date : 'MMMM' }} del {{ today | date: 'yyyy' }})</h4>
       </h1>
       </ion-text>
     </div>

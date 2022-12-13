@@ -11,6 +11,7 @@ import { AlertController, LoadingController } from '@ionic/angular';
 })
 export class MenuInicioAlumnoPage implements OnInit {
 
+  today:any;
   dato:any;
   code:any;
   constructor(private loadingController: LoadingController, private barcodeScanner: BarcodeScanner, private menu: MenuController, private activeroute: ActivatedRoute, private router: Router) {
@@ -34,6 +35,7 @@ export class MenuInicioAlumnoPage implements OnInit {
    
   ngOnInit() {
     this.loadingController.dismiss();
+    this.today = Date.now()
   }
 
   ionViewWillLeave() {

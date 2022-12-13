@@ -15,7 +15,7 @@ export class ApiService {
         'Access-Control-Allow-Origin': '*'
       })
   } // Se establece la base url del API a consumir
-  apiURL = 'http://192.168.249.18:3000';
+  apiURL = 'https://my-json-server.typicode.com/MatiasLealTapia/ionicApiRestProyectoQR';
 
   constructor(private http: HttpClient) { }
 

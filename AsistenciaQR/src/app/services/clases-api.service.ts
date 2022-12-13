@@ -15,7 +15,7 @@ export class ClasesApiService {
         'Access-Control-Allow-Origin': '*'
       })
   } // Se establece la base url del API a consumir
-  apiURL = 'https://matiaslealtapia.github.io/ionicApiRestProyectoQR/clases.json';
+  apiURL = 'https://my-json-server.typicode.com/MatiasLealTapia/ionicApiRestProyectoQR/clases';
 
   constructor(public http: HttpClient) { }
 
